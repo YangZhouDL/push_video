@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- <include file="$(find zed_wrapper)/launch/zedm.launch"/>
+
+    <node pkg="push_video" type="push_ros" name="push_zedm" output="screen" args="zedm"> 
+        <param name="width" type="int" value="1280"/>
+        <param name="height" type="int" value="720"/>
+        <param name="fps" type="int" value="15"/>
+        <param name="pixel_type" type="string" value="BGRA"/>
+    </node> -->
+    
+    <include file="$(find realsense2_camera)/launch/rs_t265_image.launch"/>
+
+    <node pkg="push_video" type="push_ros" name="push_realsense_dis" output="screen" args="realsense_dis">
+        <param name="width" type="int" value="848"/>
+        <param name="height" type="int" value="800"/>
+        <param name="fps" type="int" value="30"/>    
+        <param name="pixel_type" type="string" value="Gray"/>
+    </node>
+
+    <!-- <node pkg="push_video" type="push_ros" name="push_realsense_undis" output="screen" args="realsense_undis">
+        <param name="width" type="int" value="848"/>
+        <param name="height" type="int" value="800"/>
+        <param name="fps" type="int" value="30"/>    
+        <param name="pixel_type" type="string" value="Gray"/>
+    </node> -->
+
+</launch>
